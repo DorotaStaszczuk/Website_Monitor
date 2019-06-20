@@ -61,3 +61,20 @@ if soup.find_all(look_for) == None:
 # if the word was found
 else:
     print("Success")
+
+# current date and time
+date = str(datetime.now())
+
+# opening logfile, saveing url, current date and time, status and reaction
+# time of each site
+l = open("logfile.txt", "a")
+add = url + " " + date + " " + status + " " + time + " "
+
+l.write(add)
+l.close()
+print("Results saved: ")
+
+# checking what was saved
+l = open("logfile.txt", "r")
+print(l.readlines())
+l.close()
