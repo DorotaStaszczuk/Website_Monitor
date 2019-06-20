@@ -41,3 +41,6 @@ else:
 # checking if the download happened without any issues
 r.raise_for_status()
 print("Website downloaded: " + url)
+
+# checking for response time
+time = str(r.elapsed.total_seconds())
