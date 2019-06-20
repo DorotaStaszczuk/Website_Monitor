@@ -44,3 +44,20 @@ print("Website downloaded: " + url)
 
 # checking for response time
 time = str(r.elapsed.total_seconds())
+
+# parsing using BeautifulSoup
+soup = BeautifulSoup(r.text, 'html.parser')
+
+# looking for a word from config file
+soup.find_all(look_for)
+
+# if the word was not found
+if soup.find_all(look_for) == None:
+    print("Word not found")
+    # wait number of seconds given in period
+    time.sleep(period)
+    continue
+
+# if the word was found
+else:
+    print("Success")
