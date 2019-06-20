@@ -23,3 +23,8 @@ c.close()
 print("Period: " + period)
 print("Look_for: " + look_for)
 print("url: " + url)
+
+# downloading the page
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36'}
+r = requests.get(url, headers=headers, timeout=5)
+print(r)
